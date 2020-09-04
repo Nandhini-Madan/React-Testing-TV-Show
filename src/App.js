@@ -21,6 +21,7 @@ export default function App() {
         .then(res => {
           setShow(res.data);
           setSeasons(formatSeasons(res.data._embedded.episodes));
+          console.log("res em",res.data._embedded.episodes);
         });
   
   // fetchShow();
@@ -44,6 +45,7 @@ export default function App() {
         onChange={handleSelect}
         value={selectedSeason || "Select a season"}
         placeholder="Select an option"
+        name="Dropdown"
       />
       <Episodes episodes={episodes} />
     </div>
